@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:id="@+id/glycuresis_ll_drugitem">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="药品名：" />
+
+    <EditText
+        android:id="@+id/glycuresis_drugname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="100px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用法：" />
+   
+
+    <Spinner
+        android:id="@+id/glycuresis_spinner_drug_dosage1"
+        android:layout_width="50px"
+        android:layout_height="wrap_content"
+        android:minWidth="50px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(次/天)" />
+
+    <Spinner
+        android:id="@+id/glycuresis_spinner_drug_dosage2"
+        android:layout_width="50px"
+        android:layout_height="wrap_content"
+        android:minWidth="50px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(mg/次)" />
+
+</LinearLayout>

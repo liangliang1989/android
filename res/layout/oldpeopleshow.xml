@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/showview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="体质类型(1星  否   2星 倾向是   3星  是)"
+            android:textSize="30px" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5px" >
+
+            <TextView
+                android:id="@+id/tizhi_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="气虚质:"
+                android:textSize="20px" />
+
+            <RatingBar
+                android:id="@+id/tizhi_ratingbar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tizhi_title1"
+                android:numStars="3"
+                android:rating="0"
+                android:stepSize="1.0" >
+            </RatingBar>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5px" >
+
+            <TextView
+                android:id="@+id/tizhi_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="阳虚质:"
+                android:textSize="20px" />
+
+            <RatingBar
+                android:id="@+id/tizhi_ratingbar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tizhi_title2"
+                android:numStars="3"
+                android:rating="0"
+                android:stepSize="1.0" >
+            </RatingBar>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5px" >
+
+            <TextView
+                android:id="@+id/tizhi_title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="阴虚质:"
+                android:textSize="20px" />
+
+            <RatingBar
+                android:id="@+id/tizhi_ratingbar3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tizhi_title3"
+                android:numStars="3"
+                android:rating="0"
+                android:stepSize="1.0" >
+            </RatingBar>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5px" >
+
+            <TextView
+                android:id="@+id/tizhi_title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="阴虚质:"
+                android:textSize="20px" />
+
+            <RatingBar
+                android:id="@+id/tizhi_ratingbar3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tizhi_title3"
+                android:numStars="3"
+                android:rating="0"
+                android:stepSize="1.0" >
+            </RatingBar>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5px" >
+
+            <TextView
+                android:id="@+id/tizhi_title4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="痰湿质:"
+                android:textSize="20px" />
+
+            <RatingBar
+                android:id="@+id/tizhi_ratingbar4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tizhi_title4"
+                android:numStars="3"
+                android:rating="0"
+                android:stepSize="1.0" >
+            </RatingBar>
+        </RelativeLayout>
+
+        <RelativeLayout>
+
+            <TextView
+                android:id="@+id/tizhi_title5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="湿热质:"
+                android:textSize="20px" />
+
+            <RatingBar
+                android:id="@+id/tizhi_ratingbar5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tizhi_title5"
+                android:numStars="3"
+                android:rating="0"
+                android:stepSize="1.0" >
+            </RatingBar>
+        </RelativeLayout>
+        <RelativeLayout>
+
+            <TextView
+                android:id="@+id/tizhi_title6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="血瘀质:"
+                android:textSize="20px" />
+
+            <RatingBar
+                android:id="@+id/tizhi_ratingbar6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tizhi_title6"
+                android:numStars="3"
+                android:rating="0"
+                android:stepSize="1.0" >
+            </RatingBar>
+        </RelativeLayout>
+        <RelativeLayout>
+
+            <TextView
+                android:id="@+id/tizhi_title7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="气郁质:"
+                android:textSize="20px" />
+
+            <RatingBar
+                android:id="@+id/tizhi_ratingbar7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tizhi_title7"
+                android:numStars="3"
+                android:rating="0"
+                android:stepSize="1.0" >
+            </RatingBar>
+        </RelativeLayout>
+        <RelativeLayout>
+
+            <TextView
+                android:id="@+id/tizhi_title8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="特禀质:"
+                android:textSize="20px" />
+
+            <RatingBar
+                android:id="@+id/tizhi_ratingbar8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tizhi_title8"
+                android:numStars="3"
+                android:rating="0"
+                android:stepSize="1.0" >
+            </RatingBar>
+        </RelativeLayout>
+        <RelativeLayout>
+
+            <TextView
+                android:id="@+id/tizhi_title9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="平和质:"
+                android:textSize="20px" />
+
+            <RatingBar
+                android:id="@+id/tizhi_ratingbar9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tizhi_title9"
+                android:numStars="3"
+                android:rating="0"
+                android:stepSize="1.0" >
+            </RatingBar>
+        </RelativeLayout>
+    </LinearLayout>
+	<LinearLayout android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical">
+        <TextView android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="建议："/>"
+	    <ListView android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:id="@+id/lv_advice">
+	        
+	    </ListView>
+	</LinearLayout>
+</LinearLayout>

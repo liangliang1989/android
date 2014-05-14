@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10px" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="空腹血糖值:" />
+
+        <EditText
+            android:id="@+id/glysis_edt_glucose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mmol/L" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5px" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="其他检查:" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10px" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="糖化血红蛋白:" />
+
+            <EditText
+                android:id="@+id/glysis_edt_glucose1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="50px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="%" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="检查日期:" />
+            <com.util.DateEditText android:id="@+id/glue_examinedate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="200px"/>"
+        </LinearLayout>
+        
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,1124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- tittle -->
+
+    <RelativeLayout
+        android:id="@+id/oldpeopleservice_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/oldpeople_bartittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="老年人中医药健康管理服务记录表"
+            android:textSize="30px" />
+
+        <Button
+            android:id="@+id/oldpeopleservice_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="修改" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/oldpeopleservice_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/oldpeopleservice_tittle"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:padding="10px" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="姓名："
+            android:textSize="15px" />
+
+        <EditText
+            android:id="@+id/patient_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="100px"
+            android:textSize="15px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="编号："
+            android:textSize="15px" />
+
+        <EditText
+            android:id="@+id/serial_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="100px"
+            android:textSize="15px" />
+    </LinearLayout>
+
+    <!-- bobdy -->
+
+    <LinearLayout
+        android:id="@+id/oldpeopleservice_bodyhint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/oldpeopleservice_info"
+        android:orientation="vertical"
+        android:padding="10px" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint1"
+            android:textSize="20px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint2"
+            android:textSize="20px" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/oldpeopleservice_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/oldpeopleservice_bodyhint" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title1"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(1)您精力充沛吗？（指精神头足，乐于做事）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title1"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title2"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(2)您容易疲乏吗？（指体力如何，是否稍微活动一下或做一点家务劳动就感到累）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title2"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title3"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(3)您容易气短，呼吸短促，接不上气吗？"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title3"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title4"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(4)您说话声音低弱无力吗?（指说话没有力气）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title4"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title5"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(5)您感到闷闷不乐、情绪低沉吗?（指心情不愉快，情绪低落）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title5"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title6"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(6)您容易精神紧张、焦虑不安吗?（指遇事是否心情紧张）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title6"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title7"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(7)您因为生活状态改变而感到孤独、失落吗？"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title7"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title8"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(8)您容易感到害怕或受到惊吓吗?"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title8"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title9"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(9)您感到身体超重不轻松吗?(感觉身体沉重)[BMI指数=体重（kg）/身高2（m）]"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title9"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title10"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(10)您眼睛干涩吗?"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title10"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title11"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(11)您手脚发凉吗?（不包含因周围温度低或穿的少导致的手脚发冷）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title11"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title12"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(12)您胃脘部、背部或腰膝部怕冷吗？（指上腹部、背部、腰部或膝关节等，有一处或多处怕冷）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title12"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title13"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(13)您比一般人耐受不了寒冷吗？（指比别人容易害怕冬天或是夏天的冷空调、电扇等）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title13"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title14"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(14)您容易患感冒吗?（指每年感冒的次数）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title14"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title15"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(15)您没有感冒时也会鼻塞、流鼻涕吗?"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title15"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title16"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(16)您有口粘口腻，或睡眠打鼾吗？"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title16"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title17"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(17)您容易过敏(对药物、食物、气味、花粉或在季节交替、气候变化时)吗?"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title17"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title18"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(18)您的皮肤容易起荨麻疹吗? (包括风团、风疹块、风疙瘩)"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title18"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title19"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(19)您的皮肤在不知不觉中会出现青紫瘀斑、皮下出血吗?（指皮肤在没有外伤的情况下出现青一块紫一块的情况）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title19"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title20"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(20)您的皮肤一抓就红，并出现抓痕吗?（指被指甲或钝物划过后皮肤的反应）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title20"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title21"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(21)您皮肤或口唇干吗?"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title21"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title22"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(22)您有肢体麻木或固定部位疼痛的感觉吗？"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title22"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title23"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(23)您面部或鼻部有油腻感或者油亮发光吗?（指脸上或鼻子）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title23"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title24"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(24)您面色或目眶晦黯，或出现褐色斑块/斑点吗?"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title24"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title25"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(25)您有皮肤湿疹、疮疖吗？"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title25"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title26"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(26)您感到口干咽燥、总想喝水吗？"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title26"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title27"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(27)您感到口苦或嘴里有异味吗?（指口苦或口臭）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title27"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title28"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(28)您腹部肥大吗?（指腹部脂肪肥厚）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title28"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title29"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(29)您吃(喝)凉的东西会感到不舒服或者怕吃(喝)凉的东西吗？（指不喜欢吃凉的食物，或吃了凉的食物后会不舒服）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title29"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title30"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(30)您有大便黏滞不爽、解不尽的感觉吗?(大便容易粘在马桶或便坑壁上)"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title30"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title31"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(31)您容易大便干燥吗?"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title31"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title32"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(32)您舌苔厚腻或有舌苔厚厚的感觉吗?（如果自我感觉不清楚可由调查员观察后填写）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title32"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5px" >
+
+                <TextView
+                    android:id="@+id/title33"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="(33)您舌下静脉瘀紫或增粗吗？（可由调查员辅助观察后填写）"
+                    android:textSize="20px" />
+
+                <RatingBar
+                    android:id="@+id/ratingbar33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/title33"
+                    android:rating="0"
+                    android:stepSize="1.0" >
+                </RatingBar>
+            </RelativeLayout>
+
+            <!-- showview -->
+
+            <LinearLayout
+                android:id="@+id/oldpeopleservice_showview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/oldpeopleservice_physcialclass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="体质类型:"
+                    android:textSize="30px" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/oldpeopleservice_physcialclass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="气虚质:" />
+
+                    <EditText
+                        android:id="@+id/oldpeopleservice_edt_physcialclass1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="60px" />
+
+                    <TextView
+                        android:id="@+id/oldpeopleservice_physcialclass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="阳虚质:" />
+
+                    <EditText
+                        android:id="@+id/oldpeopleservice_edt_physcialclass2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="60px" />
+
+                    <TextView
+                        android:id="@+id/oldpeopleservice_physcialclass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="阴虚质:" />
+
+                    <EditText
+                        android:id="@+id/oldpeopleservice_edt_physcialclass3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="60px" />
+
+                    <TextView
+                        android:id="@+id/oldpeopleservice_physcialclass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="痰湿质:" />
+
+                    <EditText
+                        android:id="@+id/oldpeopleservice_edt_physcialclass4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="60px" />
+
+                    <TextView
+                        android:id="@+id/oldpeopleservice_physcialclass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="湿热质:" />
+
+                    <EditText
+                        android:id="@+id/oldpeopleservice_edt_physcialclass5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="60px" />
+
+                    <TextView
+                        android:id="@+id/oldpeopleservice_physcialclass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="血瘀质:" />
+
+                    <EditText
+                        android:id="@+id/oldpeopleservice_edt_physcialclass6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="60px" />
+
+                    <TextView
+                        android:id="@+id/oldpeopleservice_physcialclass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="气郁质:" />
+
+                    <EditText
+                        android:id="@+id/oldpeopleservice_edt_physcialclass7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="60px" />
+
+                    <TextView
+                        android:id="@+id/oldpeopleservice_physcialclass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="特禀质:" />
+
+                    <EditText
+                        android:id="@+id/oldpeopleservice_edt_physcialclass8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="60px" />
+
+                    <TextView
+                        android:id="@+id/oldpeopleservice_physcialclass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="平和质:" />
+
+                    <EditText
+                        android:id="@+id/oldpeopleservice_edt_physcialclass9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="60px" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/oldpeopleservice_physcialclass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="中医药保健指导:"
+                        android:textSize="25px" />
+
+                    <com.health.viewUtil.MultiChoiceEditText
+                        android:id="@+id/oldpeopleservice_mce_physcialguide"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/oldpeopleservice_reportdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="填表日期:" />
+
+                    <com.health.util.DateEditText
+                        android:id="@+id/oldpeopleservice_det_reportdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="200px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="医生签名:" />
+
+                    <EditText
+                        android:id="@+id/oldpeopleservice_reportdoctor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="200px" />
+                </LinearLayout>
+
+                
+            </LinearLayout>
+            <Button
+                    android:id="@+id/oldpeopleservice_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="提交" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/oldpeople_edit_helpbutton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/right_blank_size"
+        android:background="@android:color/transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/report_detail"
+    android:padding="10px">
+	<TextView android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="详细情况："
+	    android:textSize="30px"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5px" >
+
+        <TextView
+            
+            android:layout_width="100px"
+            android:layout_height="wrap_content"
+            android:text="发现时间:"
+            android:textSize="20px" />
+		<com.util.DateEditText
+            android:id="@+id/detail_startdata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="350px" />
+		
+    </LinearLayout>
+	<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5px" >
+
+        <TextView
+            
+            android:layout_width="100px"
+            android:layout_height="wrap_content"
+            android:text="信息类别:" 
+            android:textSize="20px"/>
+		<Spinner
+            android:id="@+id/detail_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="350px" />
+		
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5px" >
+
+        <TextView
+            
+            android:layout_width="100px"
+            android:layout_height="wrap_content"
+            android:text="信息内容:" 
+            android:hint="注明发现问题（隐患）的地点、内容等有关情况简单描述。"
+            android:textSize="20px"/>
+		<EditText
+            android:id="@+id/detail_content"
+            android:layout_width="350px"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            
+            android:minWidth="350px"
+            android:gravity="left|top"/>
+		
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5px" >
+
+        <TextView
+            
+            android:layout_width="100px"
+            android:layout_height="wrap_content"
+            android:text="报告时间:"
+            android:textSize="20px" />
+		<com.util.DateEditText
+            android:id="@+id/detail_reportdata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="350px" />
+		
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5px" >
+
+        <TextView
+            
+            android:layout_width="100px"
+            android:layout_height="wrap_content"
+            android:text="报告人:"
+            android:textSize="20px" />
+		<EditText
+            android:id="@+id/detail_reportpeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="350px" />
+		
+    </LinearLayout>
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+		<Button 
+            android:id="@+id/report_btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加"/>
+        <Button 
+            android:id="@+id/report_btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="修改"/>
+        <Button 
+            android:id="@+id/report_btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提交"/>
+    </LinearLayout>
+</LinearLayout>

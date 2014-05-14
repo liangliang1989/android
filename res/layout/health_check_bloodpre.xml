@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TableRow>
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:text="舒张压(mmHg):"/>
+        <EditText 
+            android:id="@+id/et_shuzhang"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textSize="15sp"
+            android:textColor="#0000ee"/>
+        
+    </TableRow>
+    <TableRow>
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:text="收缩压(mmHg):"/>
+        <EditText 
+            android:id="@+id/et_shousuo"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:textSize="15sp"
+            android:textColor="#0000ee"/>
+        
+    </TableRow>
+
+</TableLayout>

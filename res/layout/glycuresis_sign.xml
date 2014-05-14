@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="血压（mmHg）"/>
+        <Spinner android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/glycuresis_spinner_bloodpresure"/>"
+    </LinearLayout>
+	
+    
+    <LinearLayout android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="体重（kg)"/>
+        <Spinner android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/glycuresis_spinner_weight"/>
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="体质指数"/>
+        <EditText android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/glycuresis_edt_physicalindex"
+            android:inputType="numberDecimal"/>
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="足背动脉搏动"/>
+        <Spinner android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/glycuresis_spinner_pulse"/>
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="其    他"/>
+        <EditText android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/glycuresis_edt_signother"
+            android:inputType="text"/>
+    </LinearLayout>
+
+</LinearLayout>

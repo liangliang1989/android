@@ -1,0 +1,2516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/top_title_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_title_bar"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/title_bar_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="健康体检表"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_health_check_table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="保存"
+            android:onClick="saveCheckTable" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="姓名："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_name"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_name" />
+
+                <TextView
+                    android:id="@+id/tv_serialId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_name"
+                    android:layout_toLeftOf="@+id/et_serialId"
+                    android:text="编号："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_serialId"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/tv_check_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="体检日期："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.util.DateEditText
+                    android:id="@+id/et_check_date"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_check_date" />
+
+                <TextView
+                    android:id="@+id/tv_doctor_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_check_date"
+                    android:layout_marginLeft="50dp"
+                    android:layout_toRightOf="@id/et_check_date"
+                    android:text="责任医生："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_doctor_name"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_doctor_name" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_symptom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="症状："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.MultiChoiceEditText
+                    android:id="@+id/et_symtom"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_symptom" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="一般状况"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/tv_temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="体温(℃)："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_temperature"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_temperature"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/tv_pulseRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="@id/tv_temperature"
+                    android:layout_marginLeft="50dp"
+                    android:layout_toRightOf="@id/et_temperature"
+                    android:text="脉率(次/分钟)："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_pulseRate"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_pulseRate"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/tv_breathingRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="@id/tv_temperature"
+                    android:layout_marginLeft="50dp"
+                    android:layout_toRightOf="@id/et_pulseRate"
+                    android:text="呼吸频率(次/分钟)："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_breathingRate"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_breathingRate"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/tv_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="@id/tv_temperature"
+                    android:layout_marginLeft="50dp"
+                    android:layout_toRightOf="@id/et_breathingRate"
+                    android:text="身高(cm)："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_height"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_height"
+                    android:inputType="numberDecimal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/tv_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="体重(kg))："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_weight"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_weight"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/tv_waistline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="@id/tv_weight"
+                    android:layout_marginLeft="50dp"
+                    android:layout_toRightOf="@id/et_weight"
+                    android:text="腰围(cm)："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_waistline"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_waistline"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/tv_leftBloodPressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="@id/tv_weight"
+                    android:layout_marginLeft="50dp"
+                    android:layout_toRightOf="@id/et_waistline"
+                    android:text="左侧血压(mmHg)："
+                    android:textSize="@dimen/text_size_4" />
+
+                <TextView
+                    android:id="@+id/et_leftBloodPressure"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_leftBloodPressure"
+                    android:background="@drawable/archive_edit_bg"
+                    android:gravity="center_vertical"
+                    android:textColor="#0000ee"
+                    android:textSize="@dimen/text_size_3" />
+
+                <TextView
+                    android:id="@+id/tv_rightBloodPressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="@id/tv_weight"
+                    android:layout_marginLeft="50dp"
+                    android:layout_toRightOf="@id/et_leftBloodPressure"
+                    android:text="右侧血压(mmHg)："
+                    android:textSize="@dimen/text_size_4" />
+
+                <TextView
+                    android:id="@+id/et_rightBloodPressure"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_rightBloodPressure"
+                    android:background="@drawable/archive_edit_bg"
+                    android:gravity="center_vertical"
+                    android:textColor="#0000ee"
+                    android:textSize="@dimen/text_size_3" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/tv_BMI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="体质指数(kg/㎡)："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_BMI"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_BMI"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/tv_healthState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_BMI"
+                    android:layout_marginLeft="50dp"
+                    android:layout_toRightOf="@id/et_BMI"
+                    android:text="老年人健康状态自我评估："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_healthState"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_healthState" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/tv_abilityOfSelf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="老年人生活自理能力自我评估:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_abilityOfSelf"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_abilityOfSelf" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/tv_cognitiveAbility"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="老年人认知能力:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_cognitiveAbility"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_cognitiveAbility" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/tv_emotionalStates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="老年人情感状态:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_emotionalStates"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_emotionalStates" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="生活方式"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="体育锻炼："
+                        android:textSize="@dimen/text_size_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="锻炼频率"
+                        android:textSize="@dimen/text_size_3" />
+
+                    <com.health.viewUtil.SingleChoiceEditText
+                        android:id="@+id/et_exerciseFrequency"
+                        style="@style/edit_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="每次锻炼时间(分钟)"
+                        android:textSize="@dimen/text_size_3" />
+
+                    <EditText
+                        android:id="@+id/et_timePerExercise"
+                        style="@style/edit_text"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="坚持锻炼时间(年)"
+                        android:textSize="@dimen/text_size_3" />
+
+                    <EditText
+                        android:id="@+id/et_timeOfKeepExercise"
+                        style="@style/edit_text"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="锻炼方式"
+                        android:textSize="@dimen/text_size_3" />
+
+                    <EditText
+                        android:id="@+id/et_methodOfExercise"
+                        style="@style/edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="饮食习惯："
+                        android:textSize="@dimen/text_size_4" />
+
+                    <com.health.viewUtil.MultiChoiceEditText
+                        android:id="@+id/et_eatingHabits"
+                        style="@style/edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="吸烟情况："
+                        android:textSize="@dimen/text_size_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="吸烟状况"
+                        android:textSize="@dimen/text_size_3" />
+
+                    <com.health.viewUtil.SingleChoiceEditText
+                        android:id="@+id/et_smokeState"
+                        style="@style/edit_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="日吸烟量(支)"
+                        android:textSize="@dimen/text_size_3" />
+
+                    <EditText
+                        android:id="@+id/et_smokeOfOneDay"
+                        style="@style/edit_text"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="开始吸烟年龄(岁)"
+                        android:textSize="@dimen/text_size_3" />
+
+                    <EditText
+                        android:id="@+id/et_ageOfStartSmoking"
+                        style="@style/edit_text"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="戒烟年龄(岁)"
+                        android:textSize="@dimen/text_size_3" />
+
+                    <EditText
+                        android:id="@+id/et_ageOfStopSmoking"
+                        style="@style/edit_text"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="饮酒情况："
+                        android:textSize="@dimen/text_size_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="饮酒频率"
+                        android:textSize="@dimen/text_size_3" />
+
+                    <com.health.viewUtil.SingleChoiceEditText
+                        android:id="@+id/et_freOfDrinking"
+                        style="@style/edit_text"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="日饮酒量(两)"
+                        android:textSize="@dimen/text_size_3" />
+
+                    <EditText
+                        android:id="@+id/et_drinkPerDay"
+                        style="@style/edit_text"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="是否戒酒"
+                        android:textSize="@dimen/text_size_3" />
+
+                    <com.health.viewUtil.SingleChoiceEditText
+                        android:id="@+id/et_whetherStopDrinking"
+                        style="@style/edit_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="开始饮酒年龄(岁)"
+                        android:textSize="@dimen/text_size_3" />
+
+                    <EditText
+                        android:id="@+id/et_ageOfStartDrinking"
+                        style="@style/edit_text"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="近一年内是否醉酒"
+                        android:textSize="@dimen/text_size_3" />
+
+                    <com.health.viewUtil.SingleChoiceEditText
+                        android:id="@+id/et_whetherDrinkingRecently"
+                        style="@style/edit_text"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="140dp"
+                        android:text="饮酒种类"
+                        android:textSize="@dimen/text_size_3" />
+
+                    <com.health.viewUtil.MultiChoiceEditText
+                        android:id="@+id/et_kindsOfDrinks"
+                        style="@style/edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="职业病危害因素接触史："
+                        android:textSize="@dimen/text_size_4" />
+
+                    <com.health.viewUtil.MultiChoiceEditText
+                        android:id="@+id/et_harmfulFactorsInJob"
+                        style="@style/edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="脏器功能"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="口腔："
+                    android:textSize="@dimen/text_size_4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="口唇"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_lips"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="齿列"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_tooth"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="咽部"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_pharyngeal"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="视力："
+                    android:textSize="@dimen/text_size_4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="左眼"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_leftEyesight"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="右眼"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_rightEyesight"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="左眼(矫正)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_leftCVA"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="右眼(矫正)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_rightCVA"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="听力："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_audition"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="运动功能："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_abilityOfExercise"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="查体"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="眼底："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_bottomOfEye"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="皮肤："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_skin"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="巩膜："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_sclera"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="淋巴结："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_lymphonodus"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="肺："
+                    android:textSize="@dimen/text_size_4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="桶状胸"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_tongzhuangxiong"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="呼吸音"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_huxiyin"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="罗音"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_luoyin"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="心脏："
+                    android:textSize="@dimen/text_size_4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="心率(次/分钟)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_heartRate"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="心律"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_arrhythmia"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="杂音"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_heartNoise"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="腹部："
+                    android:textSize="@dimen/text_size_4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="压痛"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_abdomenYatong"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="包块"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_abdomenBaokuai"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="肝大"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_abdomenGanda"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="脾大"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_abdomenPida"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="移动性浊音"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_abdomenZhuoyin"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下肢水肿："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_edemaLowerExtremity"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="足背动脉搏动："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_dorsalisPedisArteryPulse"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="肛门指诊："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_DRE"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="乳腺："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.MultiChoiceEditText
+                    android:id="@+id/et_breast"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="妇科："
+                    android:textSize="@dimen/text_size_4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="外阴"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_vulva"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="阴道"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_vagina"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="宫颈"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_cervical"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="宫体"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_corpus"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="附件"
+                    android:textSize="@dimen/text_size_3" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_adnexa"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="其他："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_bodyOthers"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="辅助检查"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="血常规："
+                    android:textSize="@dimen/text_size_4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="血红蛋白(g/L)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_haemoglobin"
+                    style="@style/edit_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="白细胞(×10^9/L)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_hemameba"
+                    style="@style/edit_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="血小板(×10^9/L)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_platelet"
+                    style="@style/edit_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="其他"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_bloodRoutineOthers"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="尿常规："
+                    android:textSize="@dimen/text_size_4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="尿蛋白"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_urineProtein"
+                    style="@style/edit_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="尿糖"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_urineGucose"
+                    style="@style/edit_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="尿酮体"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_urineAcetoneBody"
+                    style="@style/edit_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="尿潜血"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_urineOccultBlood"
+                    style="@style/edit_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="其他"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_urineRoutineOthers"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="空腹血糖："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_FBG"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_bloodSugarUnit"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_horizontal"
+                    android:hint="单位"
+                    android:textColor="#0000ee"
+                    android:textSize="@dimen/text_size_3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="尿微量白蛋白(mg/dL)："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_microalbuminuria"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="大便潜血："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_SedOccultBlood"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="糖化血红蛋白(%)："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_glycosylatedHemoglobin"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="心电图："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_electrocardiogram"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="乙型肝炎表面抗原："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_HBsAg"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tv_gangongneng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="肝功能："
+                    android:textSize="@dimen/text_size_4" />
+
+                <TextView
+                    android:id="@+id/tv_SGPT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_gangongneng"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/tv_gangongneng"
+                    android:text="血清谷丙转氨酶(U/L)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_SGPT"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_SGPT"
+                    android:layout_toRightOf="@id/tv_SGPT"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/tv_serGluOxalTrans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_gangongneng"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/et_SGPT"
+                    android:text="血清谷草转氨酶(U/L)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_serGluOxalTrans"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_serGluOxalTrans"
+                    android:layout_toRightOf="@id/tv_serGluOxalTrans"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/tv_lungsAlbumin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_gangongneng"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/et_serGluOxalTrans"
+                    android:text="白蛋白(g/L)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_lungsAlbumin"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_lungsAlbumin"
+                    android:layout_toRightOf="@id/tv_lungsAlbumin"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/tv_lungsTBil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_gangongneng"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/et_lungsAlbumin"
+                    android:text="总胆红素(μmol/L)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_lungsTBil"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_lungsTBil"
+                    android:layout_toRightOf="@id/tv_lungsTBil"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:id="@+id/tv_lungsConjBilirubin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/tv_SGPT"
+                    android:layout_below="@id/tv_SGPT"
+                    android:text="结合胆红素(μmol/L)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_lungsConjBilirubin"
+                    style="@style/edit_text"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_lungsConjBilirubin"
+                    android:layout_below="@id/tv_SGPT"
+                    android:layout_toRightOf="@id/tv_lungsConjBilirubin"
+                    android:inputType="numberDecimal" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="肾功能："
+                    android:textSize="@dimen/text_size_4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="血清肌酐(μmol/L)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_serumCreatinine"
+                    style="@style/edit_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="血尿素氮(mmol/L)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_bloodUreaNitrogen"
+                    style="@style/edit_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="血钾浓度(mmol/L)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_potassiumConcentration"
+                    style="@style/edit_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="血钠浓度(mmol/L)"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_SerumSodiumConcentration"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="血脂(mmol/L)："
+                    android:textSize="@dimen/text_size_4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="总胆固醇"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_totalCholesterol"
+                    style="@style/edit_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="甘油三酯"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_triglyceride"
+                    style="@style/edit_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="血清低密度脂蛋白胆固醇"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_LDLC"
+                    style="@style/edit_text"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="血清高密度脂蛋白胆固醇"
+                    android:textSize="@dimen/text_size_3" />
+
+                <EditText
+                    android:id="@+id/et_HDLC"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="胸部X线片："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_chestX_ray"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B超："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_BUltrasound"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="宫颈涂片："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_cervicalSmear"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="其他："
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_helpCheckOther"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="中医体质辨识"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="平和质:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_mildPhysical"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="气虚质:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_faintPhysical"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="阳虚质:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_yangPhysical"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="阴虚质:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_yinPhysical"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="痰湿质:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_phlegmDampnessPhysical"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="湿热质:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_dampnessHeatPhysical"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="血瘀质:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_bloodStasisPhysical"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="气郁质:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_qiYuPhysical"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="特秉质:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_graspPhysical"
+                    style="@style/edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="现存主要健康问题"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="脑血管疾病:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.MultiChoiceEditText
+                    android:id="@+id/et_cerebrovascularDiseases"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="肾脏疾病:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.MultiChoiceEditText
+                    android:id="@+id/et_kidneyDisease"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="心脏疾病:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.MultiChoiceEditText
+                    android:id="@+id/et_cardiacDisease"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="血管疾病:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.MultiChoiceEditText
+                    android:id="@+id/et_vascularDisease"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="眼部疾病:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.MultiChoiceEditText
+                    android:id="@+id/et_oculopathy"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="神经系统疾病:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.MultiChoiceEditText
+                    android:id="@+id/et_nerveSystemDisease"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="其他系统疾病:"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.MultiChoiceEditText
+                    android:id="@+id/et_otherSystemsDisease"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="住院治疗情况"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/btn_add_hospital_history"
+                    android:layout_centerHorizontal="true"
+                    android:text="住院史"
+                    android:textSize="@dimen/text_size_4" />
+
+                <Button
+                    android:id="@+id/btn_add_hospital_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="添加住院史"
+                    android:textSize="@dimen/text_size_3" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#5222" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center_horizontal"
+                    android:text="入/出院日期"
+                    android:textSize="@dimen/text_size_3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="原因"
+                    android:textSize="@dimen/text_size_3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center_horizontal"
+                    android:text="医疗机构名称"
+                    android:textSize="@dimen/text_size_3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="病案号"
+                    android:textSize="@dimen/text_size_3" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lv_hospital_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="#000"
+                android:dividerHeight="1dp"
+                android:footerDividersEnabled="true" >
+            </ListView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="0dp"
+                android:background="#000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="主要用药情况"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <Button
+                android:id="@+id/btn_add_medicine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="添加药物"
+                android:textSize="@dimen/text_size_3" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#5222" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="药物名称"
+                    android:textSize="@dimen/text_size_3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="用法"
+                    android:textSize="@dimen/text_size_3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="用量"
+                    android:textSize="@dimen/text_size_3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="用药时间"
+                    android:textSize="@dimen/text_size_3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="服药已从性"
+                    android:textSize="@dimen/text_size_3" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lv_medicine_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="#000"
+                android:dividerHeight="1dp"
+                android:footerDividersEnabled="true" >
+            </ListView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="0dp"
+                android:background="#000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="非免疫规划预防接种史"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <Button
+                android:id="@+id/btn_add_vacc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="添加接种记录"
+                android:textSize="@dimen/text_size_3" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#5222" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="名称"
+                    android:textSize="@dimen/text_size_3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center_horizontal"
+                    android:text="接种日期"
+                    android:textSize="@dimen/text_size_3" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center_horizontal"
+                    android:text="接种机构"
+                    android:textSize="@dimen/text_size_3" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lv_vacc_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="#000"
+                android:dividerHeight="1dp"
+                android:footerDividersEnabled="true" >
+            </ListView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="0dp"
+                android:background="#000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="总结"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="体检是否有异常"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.SingleChoiceEditText
+                    android:id="@+id/et_healthEvaluation"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="健康指导："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.MultiChoiceEditText
+                    android:id="@+id/et_healthGuidance"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="危险因素控制："
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.viewUtil.MultiChoiceEditText
+                    android:id="@+id/et_riskFactorsControl"
+                    style="@style/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="#000000" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

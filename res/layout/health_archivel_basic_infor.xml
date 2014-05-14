@@ -1,0 +1,836 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="姓名："
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_name"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_name"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="left"
+                android:textColor="#0000ee"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_userId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_name"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="left"
+                android:textColor="#0000ef"
+                android:textSize="20sp"
+                android:text="123" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_name"
+                android:layout_toLeftOf="@id/et_userId"
+                android:text="编号："
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/tv_name"
+                android:text="性别："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_gender"
+                android:layout_below="@id/et_name"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_gender"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <com.health.util.DateEditText
+                android:id="@+id/et_birth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_gender"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/archive_edit_bg"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_birth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_gender"
+                android:layout_toLeftOf="@id/et_birth"
+                android:text="出生日期："
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_idNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/tv_gender"
+                android:text="身份证号："
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/et_idNUmber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_idNumber"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_idNumber"
+                android:background="@drawable/archive_edit_bg"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_idNumber"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/et_birth"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/archive_edit_bg"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_idNumber"
+                android:layout_below="@id/tv_birth"
+                android:layout_toLeftOf="@id/et_company"
+                android:text="工作单位："
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_selfPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/tv_idNumber"
+                android:text="本人电话："
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/et_selfPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_selfPhone"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_selfPhone"
+                android:background="@drawable/archive_edit_bg"
+                android:inputType="phone"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_contactPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_selfPhone"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/et_company"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/archive_edit_bg"
+                android:inputType="phone"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_contactPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_selfPhone"
+                android:layout_below="@id/tv_company"
+                android:layout_marginLeft="30dp"
+                android:layout_toLeftOf="@id/et_contactPhone"
+                android:text="联系人电话："
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/et_contactName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_selfPhone"
+                android:layout_below="@id/et_idNUmber"
+                android:layout_marginLeft="5dp"
+                android:layout_toLeftOf="@id/tv_contactPhone"
+                android:background="@drawable/archive_edit_bg"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_contactName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_selfPhone"
+                android:layout_below="@id/et_idNUmber"
+                android:layout_toLeftOf="@id/et_contactName"
+                android:text="联系人姓名:"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_permanentType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/tv_selfPhone"
+                android:text="常住类型："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_permanentType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_permanentType"
+                android:layout_below="@id/tv_selfPhone"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_permanentType"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_nation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_permanentType"
+                android:layout_below="@id/et_contactName"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/set_permanentType"
+                android:text="民族："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_nation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_nation"
+                android:layout_below="@id/tv_contactPhone"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_nation"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_bloodType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/tv_permanentType"
+                android:layout_marginTop="5dp"
+                android:text="血型："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_bloodType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_bloodType"
+                android:layout_below="@id/tv_nation"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_bloodType"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_RHType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_nation"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/set_bloodType"
+                android:text="RH阴性："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_RHType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_RHType"
+                android:layout_below="@id/tv_nation"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_RHType"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_educationDegree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/tv_bloodType"
+                android:layout_marginTop="5dp"
+                android:text="文化程度："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_educationDegree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_educationDegree"
+                android:layout_below="@id/tv_bloodType"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_educationDegree"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_jobs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_educationDegree"
+                android:layout_below="@id/tv_bloodType"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/set_educationDegree"
+                android:text="职业："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_jobs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_jobs"
+                android:layout_below="@id/tv_bloodType"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_jobs"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_maritalStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_bloodType"
+                android:layout_below="@id/tv_nation"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/set_RHType"
+                android:text="婚姻状况："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_maritalStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_maritalStatus"
+                android:layout_below="@id/tv_nation"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_maritalStatus"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_paymentType0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_jobs"
+                android:layout_below="@id/tv_RHType"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/set_jobs"
+                android:text="医疗费用支付方式："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.MultiChoiceEditText
+                android:id="@+id/met_paymentType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_paymentType0"
+                android:layout_below="@id/tv_RHType"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_paymentType0"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_allergicHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/tv_paymentType0"
+                android:text="药物过敏史："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.MultiChoiceEditText
+                android:id="@+id/met_allergicHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_allergicHistory"
+                android:layout_below="@id/tv_paymentType0"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_allergicHistory"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_exposeHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_allergicHistory"
+                android:layout_below="@id/tv_paymentType0"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/met_allergicHistory"
+                android:text="暴露史："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.MultiChoiceEditText
+                android:id="@+id/met_exposeHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_exposeHistory"
+                android:layout_below="@id/tv_paymentType0"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_exposeHistory"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_illness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_exposeHistory"
+                android:layout_below="@id/tv_paymentType0"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/met_exposeHistory"
+                android:text="患病史："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.MultiChoiceEditText
+                android:id="@+id/met_illness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_illness"
+                android:layout_below="@id/tv_paymentType0"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_illness"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_operation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/tv_illness"
+                android:layout_marginTop="5dp"
+                android:text="手术史："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_operation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_operation"
+                android:layout_below="@id/tv_exposeHistory"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_operation"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_trauma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_operation"
+                android:layout_below="@id/tv_illness"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/set_operation"
+                android:text="外伤史："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_trauma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_trauma"
+                android:layout_below="@id/tv_illness"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_trauma"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_transfusion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_trauma"
+                android:layout_below="@id/tv_illness"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/set_trauma"
+                android:text="输血史："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_transfusion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_trauma"
+                android:layout_below="@id/tv_illness"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_transfusion"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_familyHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/tv_transfusion"
+                android:layout_marginTop="5dp"
+                android:text="家族史："
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_fatherHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_familyHistory"
+                android:layout_below="@id/tv_transfusion"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/tv_familyHistory"
+                android:text="父亲"
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.MultiChoiceEditText
+                android:id="@+id/met_fatherHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_fatherHistory"
+                android:layout_below="@id/tv_transfusion"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_fatherHistory"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_motherHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_familyHistory"
+                android:layout_below="@id/tv_transfusion"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/met_fatherHistory"
+                android:text="母亲"
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.MultiChoiceEditText
+                android:id="@+id/met_motherHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_fatherHistory"
+                android:layout_below="@id/tv_transfusion"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_motherHistory"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_brothersSistersHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_familyHistory"
+                android:layout_below="@id/tv_transfusion"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/met_motherHistory"
+                android:text="兄弟姐妹"
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.MultiChoiceEditText
+                android:id="@+id/met_brothersSistersHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_fatherHistory"
+                android:layout_below="@id/tv_transfusion"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_brothersSistersHistory"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_childrenHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_familyHistory"
+                android:layout_below="@id/tv_transfusion"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/met_brothersSistersHistory"
+                android:text="子女"
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.MultiChoiceEditText
+                android:id="@+id/met_childrenHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_fatherHistory"
+                android:layout_below="@id/tv_transfusion"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_childrenHistory"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_genopathy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/tv_childrenHistory"
+                android:layout_marginTop="5dp"
+                android:text="遗传病史："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_genopathy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_genopathy"
+                android:layout_below="@id/tv_childrenHistory"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_genopathy"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_deformityState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_genopathy"
+                android:layout_below="@id/tv_childrenHistory"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/set_genopathy"
+                android:text="残疾情况："
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_deformityState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_genopathy"
+                android:layout_below="@id/tv_childrenHistory"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_deformityState"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_environment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/tv_deformityState"
+                android:layout_marginTop="5dp"
+                android:text="生活环境："
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_airExhaust"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_environment"
+                android:layout_below="@id/tv_deformityState"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/tv_environment"
+                android:text="厨房排风设施"
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_airExhaust"
+                android:layout_width="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_airExhaust"
+                android:layout_below="@id/tv_deformityState"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_airExhaust"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_fuleType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_environment"
+                android:layout_below="@id/tv_deformityState"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/set_airExhaust"
+                android:text="燃料类型"
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_fuleType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_alignBottom="@id/tv_airExhaust"
+                android:layout_below="@id/tv_deformityState"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_fuleType"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+            
+             <TextView
+                android:id="@+id/tv_waterType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_environment"
+                android:layout_below="@id/tv_deformityState"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/set_fuleType"
+                android:text="饮水"
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_waterType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_airExhaust"
+                android:layout_below="@id/tv_deformityState"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_waterType"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+            
+             <TextView
+                android:id="@+id/tv_toiletType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_environment"
+                android:layout_below="@id/tv_deformityState"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/set_waterType"
+                android:text="厕所"
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_toiletType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_airExhaust"
+                android:layout_below="@id/tv_deformityState"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_toiletType"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+            
+            <TextView
+                android:id="@+id/tv_animalHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_airExhaust"
+                android:layout_alignLeft="@id/tv_airExhaust"
+                android:layout_marginTop="5dp"
+                android:text="禽畜栏"
+                android:textSize="25sp" />
+
+            <com.health.viewUtil.SingleChoiceEditText
+                android:id="@+id/set_animalHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_animalHome"
+                android:layout_below="@id/tv_airExhaust"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_animalHome"
+                android:background="@drawable/archive_edit_bg"
+                android:gravity="center_horizontal"
+                android:textColor="#0000ef"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

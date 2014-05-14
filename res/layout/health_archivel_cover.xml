@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ScrollView
+        android:id="@+id/archive_content_sv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/archive_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dp"
+            android:clickable="false"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="false"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:text="姓  名："
+                    android:textColor="@color/backColor"
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/archive_edit_bg"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_4" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="false"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:text="现 住 址："
+                    android:textColor="@color/backColor"
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_address"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/archive_edit_bg"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_4" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="false"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:text="户籍地址："
+                    android:textColor="@color/backColor"
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_huji_address"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/archive_edit_bg"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_4" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="false"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:text="联系电话："
+                    android:textColor="@color/backColor"
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/archive_edit_bg"
+                    android:gravity="center"
+                    android:inputType="phone"
+                    android:textSize="@dimen/text_size_4" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="false"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:text="乡镇（街道）名称："
+                    android:textColor="@color/backColor"
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_street_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/archive_edit_bg"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_4" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="false"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:text="村（居）委会名称："
+                    android:textColor="@color/backColor"
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_country_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/archive_edit_bg"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_4" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="200dp"
+                android:clickable="false"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:text="建档单位："
+                    android:textColor="@color/backColor"
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_jiandang_com"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/archive_edit_bg"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_4" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="false"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:text="建 档 人："
+                    android:textColor="@color/backColor"
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_jiandang_person"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/archive_edit_bg"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_4" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="false"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:text="责任医生："
+                    android:textColor="@color/backColor"
+                    android:textSize="@dimen/text_size_4" />
+
+                <EditText
+                    android:id="@+id/et_doctor"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/archive_edit_bg"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_4" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="false"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:text="建档日期："
+                    android:textColor="@color/backColor"
+                    android:textSize="@dimen/text_size_4" />
+
+                <com.health.util.DateEditText
+                    android:id="@+id/et_date"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/archive_edit_bg"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_4" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

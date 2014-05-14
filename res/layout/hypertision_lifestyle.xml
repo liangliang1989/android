@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="日吸烟量（支）"/>
+        <Spinner android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hypertension_spinner_daysmoking"/>
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="日饮酒量（两）"/>
+        <Spinner android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hypertension_spinner_daydrinking"/>
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="运    动"/>
+        <Spinner android:layout_width="wrap_content"
+            android:minWidth="100px"
+            android:layout_height="wrap_content"
+            android:id="@+id/hypertension_spinner_sportnum"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="次/周"/>
+        <Spinner android:layout_width="wrap_content"
+            android:minWidth="100px"
+            android:layout_height="wrap_content"
+            android:id="@+id/hypertension_spinner_sportnum"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分钟/次"/>
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="摄盐情况（咸淡）"/>
+        <RatingBar
+                android:id="@+id/hypertension_eat_salt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="3"
+                android:rating="0"
+                android:stepSize="1.0" >
+            </RatingBar>
+    </LinearLayout>
+	
+    <LinearLayout android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="心理调整:"/>
+        <Spinner android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hypertension_spinner_mentaladjust"/>
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="遵医行为:"/>
+        <Spinner android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hypertension_spinner_medicalbehavior"/>
+    </LinearLayout>
+    
+    
+</LinearLayout>

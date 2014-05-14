@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="55px"
+        android:background="@drawable/log_topbg" />
+
+    <LinearLayout
+        android:id="@+id/loginLayout"
+        android:layout_width="508px"
+        android:layout_height="420px"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15px"
+        android:background="@drawable/login_input_dialog_bg"
+        android:orientation="vertical"
+        android:paddingLeft="80px"
+        android:paddingRight="80px" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="15px"
+            android:text="基层健康检测管理服务端"
+            android:textColor="@color/white"
+            android:textSize="25px" />
+
+        <AutoCompleteTextView
+            android:id="@+id/cardNumAuto"
+            android:layout_width="wrap_content"
+            android:layout_height="55px"
+            android:layout_marginTop="20px"
+            android:background="@drawable/login_edit_bg"
+            android:completionThreshold="1"
+            android:hint="用户名："
+            android:maxLength="18"
+            android:paddingLeft="10px"
+            android:textSize="20px" />
+
+        <EditText
+            android:id="@+id/et_passworld"
+            android:layout_width="wrap_content"
+            android:layout_height="55px"
+            android:layout_marginTop="25px"
+            android:background="@drawable/login_edit_bg"
+            android:hint="密    码："
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:paddingLeft="10px"
+            android:textSize="20px" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30px"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="158px"
+                android:layout_height="69px"
+                android:layout_marginRight="20px"
+                android:layout_weight="1"
+                android:background="@drawable/login_btn_bg"
+                android:gravity="center_horizontal"
+                android:paddingTop="8px"
+                android:text="登录"
+                android:textColor="@color/white"
+                android:textSize="30px" />
+
+            <Button
+                android:id="@+id/btn_read_id"
+                android:layout_width="158px"
+                android:layout_height="69px"
+                android:layout_marginLeft="20px"
+                android:layout_weight="1"
+                android:background="@drawable/login_btn_bg"
+                android:gravity="center_horizontal"
+                android:paddingTop="8px"
+                android:text="刷卡"
+                android:textColor="@color/white"
+                android:textSize="30px" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/save_password_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox"
+            android:checked="true"
+            android:hint="记住密码"
+            android:linksClickable="true"
+            android:paddingLeft="50px"
+            android:textSize="20px" />
+    </LinearLayout>
+
+</RelativeLayout>
